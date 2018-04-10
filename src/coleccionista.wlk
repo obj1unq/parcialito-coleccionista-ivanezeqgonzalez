@@ -65,10 +65,26 @@
 */
 
 // PUNTO 1: COLECCIONES
-object coleccionista {
-	
+object coleccionista {	
 	//TODO: Completar la implementacion de este objeto		
-
+	var coleccionDeObjetos  = #{}
+	method agregarElemento(unElemento) {coleccionDeObjetos.add(unElemento)}
+	
+	method quitarElemento(unElemento) {coleccionDeObjetos.remove(unElemento)}
+	
+	method objetosFragiles() = coleccionDeObjetos.filter({e => e.esFragil()})
+	
+	method objetoFragilMasCaro() = self.objetosFragiles().max({ e => e.valor()})	
+	
+	method valorEnObjetosFragiles() = self.objetosFragiles().sum({ e => e.valor()})
+	
+	method valorEnCategoria(unaCategoria) = coleccionDeObjetos.filter({e => e.categoria() == unaCategoria}).sum({ e => e.valor()})
+	
+	method existeElementoDe(unaCategoria) = coleccionDeObjetos.any({e => e.categoria() == unaCategoria})
+	
+	method categorias() = coleccionDeObjetos.map({e=> e.categoria()})
+	
+	//method todosValiosos() = coleccionDeObjetos.filter({e => 600 > e.valor()})
 }
 
 
@@ -107,6 +123,9 @@ object musica {
 }
 
 // PUNTO 2: POLIMORFISMO. 
+
+//SOLO UN MICROFONO Y UN ESTUCHE
+
 object guitarraElectrica {
    //TODO Completar la implementacion de este objeto
 }
