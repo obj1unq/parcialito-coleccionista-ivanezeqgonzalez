@@ -82,9 +82,9 @@ object coleccionista {
 	
 	method existeElementoDe(unaCategoria) = coleccionDeObjetos.any({e => e.categoria() == unaCategoria})
 	
-	method categorias() = coleccionDeObjetos.map({e=> e.categoria()})
+	method categorias() = coleccionDeObjetos.map({e=> e.categoria()}).asSet()
 	
-	//method todosValiosos() = coleccionDeObjetos.filter({e => 600 > e.valor()})
+	method todosValiosos() = coleccionDeObjetos.all({e => e.valor() > 600})
 }
 
 
