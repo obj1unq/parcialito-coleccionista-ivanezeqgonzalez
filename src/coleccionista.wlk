@@ -128,7 +128,27 @@ object musica {
 
 object guitarraElectrica {
    //TODO Completar la implementacion de este objeto
+    var property estuche 
+    var property microfono 
+   	method esFragil() = estuche.esFragil()
+	method valor() = 10000	+ microfono.valor()
+	method categoria() = musica
 }
-
+object microfonoGibson{
+	method esFragil() = true
+	method valor() = 1000	
+	method categoria() = musica
+}
+object microfonoDiMarzio{
+	method esFragil() = true
+	method valor() = 800	
+	method categoria() = musica
+}
+object estucheFlexible{
+	method esFragil() = true
+}
+object estucheRigido{
+	method esFragil() = false
+}
 //TODO: agregar los objetos que falten! Si no agregaste ninguno repensá tu solución; pista: el punto se llama "POLIMORFISMO" 
 
